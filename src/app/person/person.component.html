@@ -1,3 +1,9 @@
-<p>
-  person works!
-</p>
+<router-outlet></router-outlet>
+<div *ngIf="person">
+  <h2>Person:</h2>
+  <p>Name: {{person.FIRST_NAME}} {{person.LAST_NAME}}</p>
+  <p>Age: {{person.AGE}}</p>
+  <p>Number of cars: <a href="#">{{person.CARS}}</a></p>
+  <app-cars></app-cars>
+  <button (click)="goBack()">Back</button>
+</div>

@@ -1,7 +1,7 @@
 export class Person{
-  id:number;
-  firstname:string;
-  lastname:string;
-  age:number;
-  cars:string[];
+  ID:number;
+  FIRST_NAME:string;
+  LAST_NAME:string;
+  AGE:number;
+  CARS:number;
 }

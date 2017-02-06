@@ -18,8 +18,8 @@ export class appService{
     return this.http.get('http://test.rithos.com/api-client/test/person?id='+id)
       .map(res => res.json().data as Person);
   }
-  public getCars (cid){
-    return this.http.get('http://test.rithos.com/api-client/test/cars?id='+ cid)
+  public getCars (id){
+    return this.http.get('http://test.rithos.com/api-client/test/cars?id='+ id)
       .map(res => res.json().data as Car);
   }
 }

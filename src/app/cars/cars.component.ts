@@ -21,11 +21,11 @@ export class CarsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.load(params['cid'])
+      this.load(params['id'])
     });
   }
-  public load(cid){
-    this.appService.getCars(cid).subscribe(
+  public load(id){
+    this.appService.getCars(id).subscribe(
       data => this.car = data,
     );
   }

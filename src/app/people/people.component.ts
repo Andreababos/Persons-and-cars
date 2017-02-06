@@ -10,13 +10,13 @@ import { appService } from '../app.service';
 })
 export class PeopleComponent implements OnInit {
 
-  public person :Person[];
+  public people :Person[];
 
   constructor(private appService : appService) { }
 
   ngOnInit() {
     this.appService.getPeople().subscribe(
-      data => this.person = data,
+      data => this.people = data,
     );
   }
 
