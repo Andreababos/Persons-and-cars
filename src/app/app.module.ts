@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PeopleComponent } from './people/people.component';
 import { PersonComponent } from './person/person.component';
 import { CarsComponent } from './cars/cars.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CarsComponent } from './cars/cars.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

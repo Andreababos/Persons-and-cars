@@ -5,7 +5,8 @@ import { appService } from '../app.service';
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
-  styleUrls: ['./people.component.css']
+  styleUrls: ['./people.component.css'],
+  providers: [appService]
 })
 export class PeopleComponent implements OnInit {
 
@@ -13,9 +14,6 @@ export class PeopleComponent implements OnInit {
 
   constructor(private appService : appService) { }
 
-  public searchPerson(){
-    this.ngOnInit();
-  }
   ngOnInit() {
     this.appService.getPeople().subscribe(
       data => this.person = data,

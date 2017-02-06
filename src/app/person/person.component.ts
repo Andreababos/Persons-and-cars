@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { Person } from './person';
+import { appService } from '../app.service';
 
 @Component({
   selector: 'app-person',
@@ -7,9 +12,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonComponent implements OnInit {
 
-  constructor() { }
+  public person: Person;
 
-  ngOnInit() {
+  constructor(private appService: appService,
+              private route: ActivatedRoute,
+              private location: Location) {
   }
 
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.load(params['id'])
+    });
+  }
+
+  public load(id) {
+    this.appService.getPerson(id).subscribe(
+      data => this.person = data,
+    );
+  }
 }

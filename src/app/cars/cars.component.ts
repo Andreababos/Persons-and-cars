@@ -12,7 +12,7 @@ import { appService } from '../app.service';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-  public car=Car[];
+  public car : Car;
 
   constructor(private appService : appService,
               private route: ActivatedRoute,
@@ -20,9 +20,13 @@ export class CarsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.appService.getCars().subscribe(
+    this.route.params.subscribe(params => {
+      this.load(params['cid'])
+    });
+  }
+  public load(cid){
+    this.appService.getCars(cid).subscribe(
       data => this.car = data,
     );
   }
-
 }

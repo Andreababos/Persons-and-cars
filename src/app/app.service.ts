@@ -11,11 +11,15 @@ export class appService{
   constructor(private http:Http) { }
 
   public getPeople (){
-    return this.http.get('')
-      .map(res => res.json() as Person[]);
+    return this.http.get('http://test.rithos.com/api-client/test/people')
+      .map(res => res.json().data as Person[]);
   }
-  public getPCars (){
-    return this.http.get('')
-      .map(res => res.json() as Car[]);
+  public getPerson (id:number){
+    return this.http.get('http://test.rithos.com/api-client/test/person?id='+id)
+      .map(res => res.json().data as Person);
+  }
+  public getCars (cid){
+    return this.http.get('http://test.rithos.com/api-client/test/cars?id='+ cid)
+      .map(res => res.json().data as Car);
   }
 }
