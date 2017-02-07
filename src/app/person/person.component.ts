@@ -10,7 +10,6 @@ import { CarsComponent }  from '../cars/cars.component';
   selector: 'app-person',
   templateUrl: './person.component.html',
   styleUrls: ['./person.component.css'],
-  directives : [CarsComponent],
   providers: [appService]
 })
 export class PersonComponent implements OnInit {

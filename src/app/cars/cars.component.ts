@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
 import { Car } from '../cars/car';
 import { appService } from '../app.service';
@@ -15,8 +14,7 @@ export class CarsComponent implements OnInit {
   public car : Car;
 
   constructor(private appService : appService,
-              private route: ActivatedRoute,
-              private location: Location) { }
+              private route: ActivatedRoute) { }
 
 
   ngOnInit() {
