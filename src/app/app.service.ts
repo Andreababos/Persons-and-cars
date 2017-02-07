@@ -19,7 +19,11 @@ export class appService{
       .map(res => res.json().data as Person);
   }
   public getCars (id){
-    return this.http.get('http://test.rithos.com/api-client/test/cars?id='+ id)
+    return this.http.get('http://test.rithos.com/api-client/test/cars?id='+id)
+      .map(res => res.json().data as Car[]);
+  }
+  public getCar (id){
+    return this.http.get('http://test.rithos.com/api-client/test/car?id='+id)
       .map(res => res.json().data as Car);
   }
 }

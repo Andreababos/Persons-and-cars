@@ -1,9 +1,12 @@
 <router-outlet></router-outlet>
+
 <div *ngIf="person">
   <h2>Person:</h2>
   <p>Name: {{person.FIRST_NAME}} {{person.LAST_NAME}}</p>
   <p>Age: {{person.AGE}}</p>
   <p> Number of cars: {{person.CARS}}</p>
-  <app-cars></app-cars>
+  <ng-container *ngFor="let car of cars")>
+    <app-cars [car]="car.ID"></app-cars>
+  </ng-container>
   <button (click)="goBack()">Back</button>
 </div>
