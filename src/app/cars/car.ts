@@ -1,6 +1,7 @@
 export class Car{
-  id:number;
-  brand:string;
-  power:string;
-  licenseplate:string;
+  ID:number;
+  BRAND:string;
+  COLOUR:string;
+  LICENCE_PLACE:string;
+  OWNER:number;
 }

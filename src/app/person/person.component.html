@@ -1,3 +1,15 @@
-<p>
-  person works!
-</p>
+
+<router-outlet></router-outlet>
+<div *ngIf="person">
+<ng-container>
+  <ul>
+    <li>Name: {{person.FIRST_NAME}} {{person.LAST_NAME}}</li>
+    <li>Age: {{person.AGE}}</li>
+    <li>Numbert of Cars: {{person.CARS}}</li>
+  </ul>
+  </ng-container>
+  <ng-container *ngFor="let car of cars")>
+    <app-cars [car]="car.ID"></app-cars>
+  </ng-container>
+
+  </div>

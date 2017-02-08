@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
 import { Car } from '../cars/car';
 import { appService } from '../app.service';
 
@@ -12,21 +11,18 @@ import { appService } from '../app.service';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-  public car : Car;
-
+  
+  @Input () car;
   constructor(private appService : appService,
               private route: ActivatedRoute,
               private location: Location) { }
 
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.load(params['cid'])
-    });
-  }
-  public load(cid){
-    this.appService.getCars(cid).subscribe(
+    this.appService.getCar(this.car).subscribe(
       data => this.car = data,
     );
   }
+ 
+  
 }

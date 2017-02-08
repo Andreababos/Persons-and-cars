@@ -1,3 +1,8 @@
 <router-outlet></router-outlet>
-<p>people works</p>
-<a routerLink="/person/{{person.id}}" routerLinkActive="active">{{person.firstname}}</a>
+
+<ng-container>
+  <ul>
+    <li *ngFor="let person of person"><a routerLink="/person/{{person.ID}}" routerLinkActive="active">{{person.FIRST_NAME}}</a></li>
+  </ul>
+</ng-container>
+

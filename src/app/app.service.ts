@@ -20,6 +20,10 @@ export class appService{
   }
   public getCars (cid){
     return this.http.get('http://test.rithos.com/api-client/test/cars?id='+ cid)
+      .map(res => res.json().data as Car[]);
+  }
+  public getCar (id){
+    return this.http.get('http://test.rithos.com/api-client/test/car?id='+id)
       .map(res => res.json().data as Car);
   }
 }
